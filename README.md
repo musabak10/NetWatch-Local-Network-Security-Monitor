@@ -48,8 +48,6 @@ The current scan is compared with the previous scan to detect network changes.
 
 ## Detection
 
-NetWatch currently detects three types of changes:
-
 ### New Device
 
 A device is considered new when its IP address was not present in the previous scan.
@@ -91,28 +89,40 @@ are treated as the same address.
 ## Project Structure
 
 ```text
-netwatch.py
+NetWatch/
+│
+├── netwatch.py
+├── devices.json
+├── history.json
+├── requirements.txt
+├── .gitignore
+├── LICENSE
+└── README.md
 ```
+
+### netwatch.py
 
 Main application containing network detection, ARP discovery, device comparison, and JSON storage.
 
-```text
-devices.json
-```
+### devices.json
 
 Stores the devices detected during the latest scan.
 
-```text
-history.json
-```
+### history.json
 
 Stores previous scans together with their timestamps.
 
-```text
-requirements.txt
-```
+### requirements.txt
 
-Contains the external Python dependency required by the project.
+Contains the external Python dependencies required by the project.
+
+### .gitignore
+
+Contains files and directories that should not be tracked by Git.
+
+### LICENSE
+
+Contains the MIT License for the project.
 
 ## Installation
 
@@ -123,7 +133,7 @@ git clone https://github.com/musabak10/NetWatch.git
 cd NetWatch
 ```
 
-Install the required package:
+Install the required dependency:
 
 ```bash
 pip install -r requirements.txt
@@ -185,8 +195,6 @@ ARP discovery is limited to the local network calculated from the machine's acti
 
 ## Future Improvements
 
-Planned improvements may include:
-
 - DNS monitoring
 - Event logging
 - Device names and vendor identification
@@ -198,5 +206,6 @@ Planned improvements may include:
 
 ## License
 
-This project is intended for educational and authorized network monitoring purposes.
-```
+This project is licensed under the MIT License.
+
+See the [LICENSE](LICENSE) file for the full license text.
